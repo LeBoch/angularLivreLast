@@ -27,6 +27,8 @@ import {AuthorizationGuard} from "./guards/authorization.guard";
 import { BookListComponent } from './components/book-list/book-list.component';
 import { BookFormComponent } from './components/book-form/book-form.component';
 import { FormsModule } from '@angular/forms';
+import { SignupComponent } from './signup/signup.component';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,7 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     BookListComponent,
     BookFormComponent,
+    SignupComponent,
     
   ],
   imports: [
@@ -59,7 +62,8 @@ import { FormsModule } from '@angular/forms';
     MatFormFieldModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    MatInputModule
 
 
   ],

@@ -1,4 +1,3 @@
-// src/app/components/book-form/book-form.component.ts
 import { Component, Input } from '@angular/core';
 import { BookService } from '../../services/book.service';
 import { Book } from '../../models/book';

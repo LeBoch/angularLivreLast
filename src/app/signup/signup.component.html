@@ -1,0 +1,25 @@
+<div class="signup-container" *ngIf="signupFormGroup">
+    <mat-card [formGroup]="signupFormGroup">
+      <mat-card-header>
+        <mat-card-title>Créer un compte</mat-card-title>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <mat-card-content>
+        <mat-form-field appearance="outline">
+          <mat-label>Nom d'utilisateur</mat-label>
+          <input matInput formControlName="username">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Mot de passe</mat-label>
+          <input type="password" matInput formControlName="password">
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions align="end">
+        <button
+          mat-raised-button color="primary"
+          (click)="signup()"
+        >S'inscrire</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  

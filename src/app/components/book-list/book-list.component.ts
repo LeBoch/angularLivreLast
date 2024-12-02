@@ -1,4 +1,3 @@
-// src/app/components/book-list/book-list.component.ts
 import { Component, OnInit } from '@angular/core';
 import { BookService } from '../../services/book.service';
 import { Book } from '../../models/book';
@@ -25,13 +24,13 @@ export class BookListComponent implements OnInit {
   }
 
   editBook(book: Book) {
-    this.editingBook = { ...book }; 
+    this.editingBook = { ...book };
   }
 
   updateBook() {
     if (this.editingBook) {
-      this.bookService.updateBook(this.editingBook); 
-      this.editingBook = null; 
+      this.bookService.updateBook(this.editingBook);
+      this.editingBook = null;
     }
   }
 

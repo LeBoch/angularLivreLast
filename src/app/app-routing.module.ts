@@ -7,9 +7,11 @@ import {AdminTemplateComponent} from "./admin-template/admin-template.component"
 import {AuthGuard} from "./guards/auth.guard";
 import { BookFormComponent } from './components/book-form/book-form.component';
 import { BookListComponent } from './components/book-list/book-list.component';
+import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
   {path : "", component : LoginComponent},
+  { path: 'signup', component: SignupComponent },
   {path : "login", component : LoginComponent},
   {path : "admin", component : AdminTemplateComponent, canActivate : [AuthGuard],
 
