@@ -10,8 +10,7 @@ export class AuthenticationService {
   public authenticated: boolean = false;
 
   users: { [key: string]: { password: string; roles: string[] } } = {
-    john: { password: 'abcd1234', roles: ['admin'] },
-    jane: { password: '1234abcd', roles: ['user'] },
+    enzo: { password: '1234', roles: ['admin'] },
   };
 
   constructor(private router: Router) {}
@@ -42,7 +41,7 @@ export class AuthenticationService {
       console.log("Nom d'utilisateur déjà pris");
       return false;
     } else {
-      this.users[username] = { password, roles: ['STUDENT'] }; 
+      this.users[username] = { password, roles: ['user'] }; 
       return true;
     }
   }

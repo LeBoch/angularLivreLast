@@ -5,8 +5,19 @@
   <span class="spacer"></span>
  <button  mat-button routerLink="/admin/home">Accueil</button>
   <button  mat-button routerLink="/admin/profile">Profile</button>
+  <mat-menu #importMenu>
+    <button mat-menu-item routerLink="/admin/new" >Ajouter un Livre</button>
+    <button mat-menu-item routerLink="/admin/list">Liste Livre</button>
+  </mat-menu>
+  <button *ngIf="authService.roles.includes('admin')" mat-button [matMenuTriggerFor]="importMenu" >
+    <mat-icon iconPositionEnd>arrow_drop_down</mat-icon>
+   Gestion Livre
+  </button>
   <button mat-button *ngIf="authService.authenticated==true">
     {{authService.username}}
+  </button>
+  <button mat-button *ngIf="authService.authenticated==true">
+    {{authService.roles}}
   </button>
   <button (click)="logout()"  mat-raised-button color="accent">Deconnexion</button>
 </mat-toolbar>
@@ -24,6 +35,12 @@
         <button mat-button routerLink="/admin/list">
           <mat-icon>dashboard</mat-icon>
           Liste Livre
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button routerLink="/admin/emprunt">
+          <mat-icon>dashboard</mat-icon>
+        Emprunt Livre
         </button>
       </mat-list-item>
     </mat-nav-list>
